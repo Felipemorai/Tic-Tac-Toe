@@ -1,6 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    user-select: none;
+}
 
 body {
-    font-family: 'Acme', sans-serif;
-    font-size: 23px;
+    background: rgb(152, 193, 240);
+}
+
+.select-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px 25px 25px;
+    border-radius: 5px;
 }
