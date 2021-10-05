@@ -52,9 +52,23 @@ body {
     padding: 8px 0;
     border: none;
     outline: none;
-    background: rgb(152, 193, 240);
+    background: #56baed;
     border-radius: 5px;
     color: #fff;
     box-shadow: 1px 5px 10px rgba(0,0,0,0.15);
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options button:hover {
+    background: #00b4d8;
+    transform: scale(0.96);
+}
+
+.options button.playerX {
+    margin-right: 5px;
+}
+
+.options button.playerO {
+    margin-left: 5px;
 }
