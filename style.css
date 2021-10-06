@@ -12,7 +12,7 @@ body {
     background: rgb(152, 193, 240);
 }
 
-.select-box, .play-board {
+.select-box, .play-board, .result-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,13 +29,6 @@ body {
     max-width: 330px;
     width: 100%;
     display: none;
-}
-
-selectt-boxx {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .select-box header {
@@ -84,6 +77,10 @@ selectt-boxx {
 
 .options button.playerO {
     margin-left: 5px;
+}
+
+.play-board {
+    display: none;
 }
 
 .play-board .details {
@@ -149,4 +146,25 @@ selectt-boxx {
     text-align: center;
     line-height: 80px;
     color: #56baed;
+}
+
+.result-box {
+    background: #fff;
+    padding: 23px;
+    border-radius: 5px;
+    max-width: 280px;
+    width: 100%;
+}
+
+.result-box .won-text {
+    font-size: 25px;
+    word-wrap: break-word;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-text p {
+    font-weight: 700;
+    margin: 0 3px;
 }
