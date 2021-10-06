@@ -100,13 +100,19 @@ selectt-boxx {
 }
 
 .play-board .details span {
-    background: rgb(152, 193, 240);
     width: 100%;
+    color: #56baed;
     border-radius: 5px;
     padding: 8px 0;
     font-size: 19px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: default;
+    text-align: center;
+}
+
+.details span.active {
+    color: #fff;
+    background: #56baed;
 }
 
 .play-board .play-area {
