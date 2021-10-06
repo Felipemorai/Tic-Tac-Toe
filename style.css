@@ -96,6 +96,7 @@ selectt-boxx {
 .play-board .details .players {
     display: flex;
     width: 100%;
+    position: relative;
     justify-content: space-between;
 }
 
@@ -106,13 +107,25 @@ selectt-boxx {
     padding: 8px 0;
     font-size: 19px;
     font-weight: 500;
-    cursor: default;
+    cursor: pointer;
     text-align: center;
+    position: relative;
+    z-index: 5;
 }
 
-.details span.active {
-    color: #fff;
+.details .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
     background: #56baed;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.details span:first-child {
+    color: #fff;
 }
 
 .play-board .play-area {
@@ -131,4 +144,9 @@ selectt-boxx {
     background: #fff;
     border-radius: 5px;
     box-shadow: 1px 5px 10px rgba(0,0,0,0.15);
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 80px;
+    color: #56baed;
 }
