@@ -135,6 +135,10 @@ body {
     z-index: 2;
 }
 
+.players.active span:first-child {
+    color: #56baed;
+}
+
 .details span:first-child {
     color: #fff;
 }
