@@ -28,7 +28,13 @@ body {
     box-shadow: 1px 5px 10px rgba(0,0,0,0.15);
     max-width: 330px;
     width: 100%;
-    display: none;
+    transition: all 0.3s ease
+}
+
+.select-box.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate (-50%, -50%) scale(0.9);
 }
 
 .select-box header {
@@ -156,6 +162,7 @@ body {
     max-width: 280px;
     width: 100%;
     box-shadow: 1px 5px 10px rgba(0,0,0,0.15);
+    display: none;
 }
 
 .result-box .won-text {
@@ -170,7 +177,7 @@ body {
 .result-box .won-text p {
     font-weight: 800;
     font-size: 26px;
-    margin: 0 3px;
+    margin: 0 5px;
 }
 
 .result-box .btn {
