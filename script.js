@@ -28,12 +28,26 @@ window.onload = () => {
 let playerXIcon = "fas fa-times";
 let playerOIcon = "far fa-circle";
 
-/* Function player icons */
+/* Player icons function*/
 function clickedBox(element) {
     if(players.classList.contains("player")) {
         element.innerHTML = `<i class="${playerOIcon}"></i>`;
+        players.classList.add("active");
     }
     else {
         element.innerHTML = `<i class="${playerXIcon}"></i>`;
+        players.classList.add("active");
+    }
+
+    element.style.pointerEvents = "none";
+}
+
+/* Bot click function */
+function bot() {
+    let array = [];
+    for (let i = 0; i < allBox.length; i++) {
+        if(allBox[i].childElementCount == 0) {
+
+        }
     }
 }
