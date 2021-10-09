@@ -40,6 +40,7 @@ function clickedBox(element) {
     }
 
     element.style.pointerEvents = "none";
+    bot();
 }
 
 /* Bot click function */
@@ -47,7 +48,9 @@ function bot() {
     let array = [];
     for (let i = 0; i < allBox.length; i++) {
         if(allBox[i].childElementCount == 0) {
-
+            array.push(i);
+            console.log(i + " " + "has no children");
         }
     }
+    console.log(array);
 }
