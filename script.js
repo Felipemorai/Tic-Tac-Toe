@@ -40,7 +40,10 @@ function clickedBox(element) {
     }
 
     element.style.pointerEvents = "none";
-    bot();
+    let randomDelayTime = ((Math.random() * 1000) + 200).toFixed();
+    setTimeout(() => {
+        bot();
+    }, randomDelayTime);
 }
 
 /* Bot click function */
@@ -53,7 +56,6 @@ function bot() {
         }
     }
     let randomBox = array[Math.floor(Math.random() * array.length)];
-    console.log(randomBox)
     if(array.length > 0) {
         if(players.classList.contains("player")) {
             allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`;
@@ -64,5 +66,5 @@ function bot() {
             players.classList.add("active");
         }
     }
-    console.log(array); 
+    allBox[randomBox].style.pointerEvents = "none";
 }
