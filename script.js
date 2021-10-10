@@ -27,16 +27,19 @@ window.onload = () => {
 /* Fontawesome icons */
 let playerXIcon = "fas fa-times";
 let playerOIcon = "far fa-circle";
+let playerSign = "X";
 
 /* Player icons function*/
 function clickedBox(element) {
     if(players.classList.contains("player")) {
+        playerSign = "O";
         element.innerHTML = `<i class="${playerOIcon}"></i>`;
         players.classList.add("active");
     }
     else {
         element.innerHTML = `<i class="${playerXIcon}"></i>`;
         players.classList.add("active");
+        
     }
 
     element.style.pointerEvents = "none";
@@ -59,11 +62,11 @@ function bot() {
     if(array.length > 0) {
         if(players.classList.contains("player")) {
             allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`;
-            players.classList.add("active");
+            players.classList.remove("active");
         }
         else {
             allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`;
-            players.classList.add("active");
+            players.classList.remove("active");
         }
     }
     allBox[randomBox].style.pointerEvents = "none";
