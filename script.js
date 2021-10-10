@@ -32,14 +32,16 @@ let playerSign = "X";
 /* Player icons function*/
 function clickedBox(element) {
     if(players.classList.contains("player")) {
-        playerSign = "O";
         element.innerHTML = `<i class="${playerOIcon}"></i>`;
         players.classList.add("active");
+        playerSign = "O";
+        element.setAttribute("id", playerSign);
     }
     else {
         element.innerHTML = `<i class="${playerXIcon}"></i>`;
         players.classList.add("active");
-        
+        playerSign = "X";
+        element.setAttribute("id", playerSign);
     }
 
     element.style.pointerEvents = "none";
@@ -51,6 +53,7 @@ function clickedBox(element) {
 
 /* Bot click function */
 function bot() {
+    playerSign = "O";
     let array = [];
     for (let i = 0; i < allBox.length; i++) {
         if(allBox[i].childElementCount == 0) {
@@ -63,10 +66,13 @@ function bot() {
         if(players.classList.contains("player")) {
             allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`;
             players.classList.remove("active");
+            playerSign = "X";
+            allBox[randomBox].setAttribute("id", playerSign);
         }
         else {
             allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`;
             players.classList.remove("active");
+            allBox[randomBox].setAttribute("id", playerSign);
         }
     }
     allBox[randomBox].style.pointerEvents = "none";
