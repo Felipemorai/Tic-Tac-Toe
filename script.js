@@ -77,3 +77,18 @@ function bot() {
     }
     allBox[randomBox].style.pointerEvents = "none";
 }
+
+/* Select the winner */
+function getClass(idname) {
+    return document.querySelector(".box" + idname).id;
+}
+
+function checkThreeClasses(val1, val2, val3, sign) {
+    if(getClass(val1) == sign && getClass(val2) == sign && getClass(val1) == sign) {
+        return true;
+    }
+}
+
+function selectWinner() {
+    if(checkThreeClasses(1,2,3,playerSign) || )
+}
