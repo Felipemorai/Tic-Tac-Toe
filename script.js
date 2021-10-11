@@ -5,7 +5,10 @@ selectXBtn = selectBox.querySelector(".playerX"),
 selectOBtn = selectBox.querySelector(".playerO"),
 playBoard = document.querySelector(".play-board"),
 allBox = document.querySelectorAll("section span"),
-players = document.querySelector(".players");
+players = document.querySelector(".players"),
+resultBox = document.querySelector(".result-box"),
+wonText = resultBox.querySelector(".won-text"),
+replayBtn = resultBox.querySelector("button");
 
 /* Window loaded */
 window.onload = () => {
@@ -28,6 +31,7 @@ window.onload = () => {
 let playerXIcon = "fas fa-times";
 let playerOIcon = "far fa-circle";
 let playerSign = "X";
+let runBot = true;
 
 /* Player icons function*/
 function clickedBox(element) {
@@ -44,16 +48,17 @@ function clickedBox(element) {
         element.setAttribute("id", playerSign);
     }
     selectWinner();
-    players.style.pointerEvents = "none";
+    playBoard.style.pointerEvents = "none";
     element.style.pointerEvents = "none";
     let randomDelayTime = ((Math.random() * 1000) + 200).toFixed();
     setTimeout(() => {
-        bot();
+        bot(runBot);
     }, randomDelayTime);
 }
 
 /* Bot click function */
-function bot() {
+function bot(runBot) {
+if(runBot) {
     playerSign = "O";
     let array = [];
     for (let i = 0; i < allBox.length; i++) {
@@ -78,9 +83,10 @@ function bot() {
         selectWinner();
     }
     allBox[randomBox].style.pointerEvents = "none";
-    players.style.pointerEvents = "auto";
+    playBoard.style.pointerEvents = "auto";
     playerSign = "X";
 }
+    }
 
 /* Select the winner */
 function getClass(idname) {
@@ -95,6 +101,13 @@ function checkClass(val1, val2, val3, sign) {
 
 function selectWinner() {
     if(checkClass(1,2,3,playerSign) || checkClass(4,5,6,playerSign) || checkClass(6,7,8,playerSign) || checkClass(1,4,7,playerSign) || checkClass(2,5,8,playerSign) || checkClass(3,6,9,playerSign) || checkClass(1,5,9,playerSign) || checkClass(3,5,7,playerSign)) {
-        console.log(playerSign + " " + "is the winner");
+         console.log(playerSign + " " + "is the winner"); 
+         runBot = false;
+         bot(runBot);
+         setTimeout(() => {
+             playBoard.classList.remove("show");
+             resultBox.classList.add("show");
+         }, 700);
+
     }
 }
