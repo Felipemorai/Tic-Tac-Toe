@@ -43,7 +43,8 @@ function clickedBox(element) {
         playerSign = "X";
         element.setAttribute("id", playerSign);
     }
-
+    selectWinner();
+    players.style.pointerEvents = "none";
     element.style.pointerEvents = "none";
     let randomDelayTime = ((Math.random() * 1000) + 200).toFixed();
     setTimeout(() => {
@@ -74,8 +75,11 @@ function bot() {
             players.classList.remove("active");
             allBox[randomBox].setAttribute("id", playerSign);
         }
+        selectWinner();
     }
     allBox[randomBox].style.pointerEvents = "none";
+    players.style.pointerEvents = "auto";
+    playerSign = "X";
 }
 
 /* Select the winner */
@@ -83,12 +87,14 @@ function getClass(idname) {
     return document.querySelector(".box" + idname).id;
 }
 
-function checkThreeClasses(val1, val2, val3, sign) {
-    if(getClass(val1) == sign && getClass(val2) == sign && getClass(val1) == sign) {
+function checkClass(val1, val2, val3, sign) {
+    if(getClass(val1) == sign && getClass(val2) == sign && getClass(val3) == sign) {
         return true;
     }
 }
 
 function selectWinner() {
-    if(checkThreeClasses(1,2,3,playerSign) || )
+    if(checkClass(1,2,3,playerSign) || checkClass(4,5,6,playerSign) || checkClass(6,7,8,playerSign) || checkClass(1,4,7,playerSign) || checkClass(2,5,8,playerSign) || checkClass(3,6,9,playerSign) || checkClass(1,5,9,playerSign) || checkClass(3,5,7,playerSign)) {
+        console.log(playerSign + " " + "is the winner");
+    }
 }
