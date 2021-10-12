@@ -184,7 +184,15 @@ body {
     max-width: 280px;
     width: 100%;
     box-shadow: 1px 5px 10px rgba(0,0,0,0.15);
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate (-50%, -50%) scale(0.9);
+}
+
+.result-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .result-box .won-text {

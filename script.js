@@ -7,7 +7,7 @@ playBoard = document.querySelector(".play-board"),
 allBox = document.querySelectorAll("section span"),
 players = document.querySelector(".players"),
 resultBox = document.querySelector(".result-box"),
-wonText = resultBox.querySelector(".won-text"),
+wonText = resultBox.querySelector(".won-text "),
 replayBtn = resultBox.querySelector("button");
 
 /* Window loaded */
@@ -104,10 +104,23 @@ function selectWinner() {
          console.log(playerSign + " " + "is the winner"); 
          runBot = false;
          bot(runBot);
+          /* Show the result box */
          setTimeout(() => {
              playBoard.classList.remove("show");
              resultBox.classList.add("show");
          }, 700);
 
+        wonText.innerHTML = `Player&nbsp;<p>${playerSign}</p>&nbsp;won the <br> game!`;
+    }else {
+        if(getClass(1) != "" && getClass(2) != "" && getClass(3) != "" && getClass(4) != "" && getClass(5) != "" && getClass(6) != "" && getClass(7) != "" && getClass(8) != "" && getClass(9) != "") {
+            runBot = false;
+            bot(runBot);
+            setTimeout(() => {
+                playBoard.classList.remove("show");
+                resultBox.classList.add("show");
+            }, 700);
+
+           wonText.innerHTML = `Match has been drawn!`;
+        }
     }
 }
