@@ -124,3 +124,8 @@ function selectWinner() {
         }
     }
 }
+
+/* Replay button */
+replayBtn.onclick = () => {
+    window.location.reload();
+}
